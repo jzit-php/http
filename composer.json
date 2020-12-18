@@ -1,0 +1,36 @@
+{
+  "name": "jzit/http",
+  "description": "JzIT http bundle",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Julian Zimmermann",
+      "email": "info@julianzimmermann.dev"
+    }
+  ],
+  "require": {
+    "http-interop/http-factory-diactoros": "^1.0.0",
+    "league/route": "~4.3.1",
+    "zendframework/zend-httphandlerrunner": "^1.0.1"
+  },
+  "require-dev": {
+    "codeception/codeception": "~3.1.2",
+    "mikey179/vfsstream": "~1.6.7",
+    "php-coveralls/php-coveralls": "~2.1.0",
+    "phpmd/phpmd": "~2.7.0",
+    "phpstan/phpstan": "~0.11.2",
+    "roave/security-advisories": "dev-master",
+    "sebastian/phpcpd": "~4.1.0",
+    "squizlabs/php_codesniffer": "~3.5.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "JzIT\\Http\\": "src/JzIT/Http"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "JzIT\\Http\\": "tests/JzIT/Http"
+    }
+  }
+}
