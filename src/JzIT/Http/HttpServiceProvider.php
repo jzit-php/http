@@ -28,11 +28,12 @@ class HttpServiceProvider extends AbstractServiceProvider
 
     /**
      * @param \Di\Container $container
+     *
      * @return \JzIT\Http\HttpServiceProvider
      */
     protected function registerRequest(Container $container): HttpServiceProvider
     {
-        $container->set('request', function () {
+        $container->set(HttpConstants::SERVICE_NAME_REQUEST, function () {
             return ServerRequestFactory::fromGlobals();
         });
 
@@ -48,7 +49,7 @@ class HttpServiceProvider extends AbstractServiceProvider
     {
         $self = $this;
 
-        $container->set('router', function () use ($self) {
+        $container->set(HttpConstants::SERVICE_NAME_ROUTER, function () use ($self) {
             $router = new Router();
 
             $router->setStrategy($self->createStrategy());
@@ -61,11 +62,12 @@ class HttpServiceProvider extends AbstractServiceProvider
 
     /**
      * @param \Di\Container $container
+     *
      * @return \JzIT\Http\HttpServiceProvider
      */
     protected function registerEmitter(Container $container): HttpServiceProvider
     {
-        $container->set('emitter', function () {
+        $container->set(HttpConstants::SERVICE_NAME_EMITTER, function () {
             return new SapiStreamEmitter();
         });
 
